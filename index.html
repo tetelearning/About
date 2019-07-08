@@ -7,7 +7,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="css/bootstrap-grid.min.css" rel="stylesheet" media="screen">
   <link href="css/main.css" rel="stylesheet" media="screen">
-  <script src="js/jquery-3.4.1.slim.min.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/core.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143437838-1"></script>
@@ -18,26 +19,39 @@
 
     gtag('config', 'UA-143437838-1');
   </script>
-  
+
 </head>
 
 <body>
-  <header>
-    <div class="navbar navbar-dark bg-dark">
-      <div class="container">
-        <a href="#" class="navbar-brand">
-          <strong>
-            TêteLearning
-          </strong>
-        </a>
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">TêteLearning</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Language
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" onclick="core.setLanguage('en-US');">English</a>
+            <a class="dropdown-item" href="#" onclick="core.setLanguage('fr');">French</a>
+            <a class="dropdown-item" href="#" onclick="core.setLanguage('de');">German</a>
+            <a class="dropdown-item" href="#" onclick="core.setLanguage('es');">Spanish</a>
+          </div>
+        </li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
   <div role="main">
     <section class="jumbotron">
-      <h1>Teach everything to everyone.</h1>
-      <p class="lead">
+      <h1 id="slogan">Teach everything to everyone.</h1>
+      <p class="lead" id="mission">
         We believe that education is a deeply personal experience that cannot
         be properly delivered in a one-to-many relationship. People learn
         best when given individualized attention and are in a consequence free
@@ -48,24 +62,24 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <h2>Mentors</h2>
-          <p>
+          <h2 id="mentor_header">Mentors</h2>
+          <p id="mentor_desc">
             Discover the benefit of dedicated one-on-one mentorships in the
             topics you're interested. Mentors are ranked by their mentees'
             ability to understand the material.
           </p>
         </div>
         <div class="col-md-3">
-          <h2>Community</h2>
-          <p>
+          <h2 id="community_header">Community</h2>
+          <p id="community_desc">
             Topic based communities of mentors and learners help to reinforce
             concepts specific to the topic. Each community is organized by a team
             of top mentors who guide the direction of the topic democratically.
           </p>
         </div>
         <div class="col-md-3">
-          <h2>Testing</h2>
-          <p>
+          <h2 id="testing_header">Testing</h2>
+          <p id="testing_desc">
             Experts in their field provide guided knowledge assessments to
             learners to ensure understanding. We use these assessments to
             grant completion of a topic and understand where additional
@@ -73,8 +87,8 @@
           </p>
         </div>
         <div class="col-md-3">
-          <h2>Progress</h2>
-          <p>
+          <h2 id="progress_header">Progress</h2>
+          <p id="progress_desc">
             As learners progress through their interested topics we provide
             appropriate alternate topics that may be of interest or beneficial.
           </p>
@@ -82,9 +96,9 @@
       </div>
     </div>
     <div class="container">
-      <h2>Interested in helping?</h2>
+      <h2 id="interested_header">Interested in helping?</h2>
       <p>
-        Reach out via Twitter
+        <span id="interested_how">Reach out via Twitter</span>
         (<a href="https://twitter.com/TeteLearning" target="_blank">@TeteLearning</a>).
       </p>
     </div>
