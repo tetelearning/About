@@ -3,13 +3,13 @@ var core = (function ($){
 
   function setLanguage(language) {
     let langData = {};
-    $.ajax('content/' + language + '.json').then((data) => {
+    $.ajax('content/' + language + '.json').then(function(data) {
       langData = data;
-    }).catch(() => {
-      return $.ajax('content/' + defaultLang + '.json').then((data) => {
+    }).catch(function() {
+      return $.ajax('content/' + defaultLang + '.json').then(function(data) {
         langData = data;
       });
-    }).then(() => {
+    }).then(function() {
       for(let i = 0; i < Object.keys(langData).length; i++) {
         let key = Object.keys(langData)[i];
         let text = langData[key];
@@ -29,6 +29,6 @@ var core = (function ($){
   init();
 
   return {
-    setLanguage
+    setLanguage: setLanguage
   };
 }($));
